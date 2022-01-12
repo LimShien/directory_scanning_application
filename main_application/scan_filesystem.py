@@ -8,9 +8,18 @@ def scan_file_system(dir_to_scan=os.getcwd()):
     The function exclude zip files that causes error to the application, zip files exceeds the buffer memory, and will kill the application
     The function returns a dictionary pair {filename(fullpath)->MD5hashvalue} 
     """
-    print("Start scanning. " + dir_to_scan)
-
     output={}
+    file_hash = ""
+    try:
+        if os.path.exists(dir_to_scan):
+            print("Directory OKAY!")
+            print("Start scanning. " + dir_to_scan)
+        else:
+            print("Error: Invalid directory!")
+            return None
+    except:
+        print("Error: Invalid Input!")
+        return None
 
     for root, dirs, files in os.walk(dir_to_scan):
         #if there is files in the directory
@@ -23,8 +32,7 @@ def scan_file_system(dir_to_scan=os.getcwd()):
 
                 file_path =  root + "/" + i
 
-                #getting hash value of a file 
-                #code reference: https://www.kite.com/python/answers/how-to-generate-an-md5-checksum-of-a-file-in-python
+                #getting hash value of a file #code reference: https://www.kite.com/python/answers/how-to-generate-an-md5-checksum-of-a-file-in-python
                 try:
                     md5_hash = hashlib.md5()
                     read_file = open(file_path, "rb")
@@ -33,16 +41,11 @@ def scan_file_system(dir_to_scan=os.getcwd()):
                     file_hash = md5_hash.hexdigest()
 
                 except:
-                    print("File is not available: " + file_path)
-            
-                #print(file_path, file_hash)
+                    print("Could not open " + file_path + ". Skipped. ")
+                    continue
 
                 #update the dictionary with the filepath (key) and MD5 hash (value)
                 output.update({file_path:file_hash}) 
 
-    #verify the key->value in dictionary, for testing purposes
-    #for i in output:
-       # print(i, output[i])
     print("Finished Scanning.  ")
-
     return output

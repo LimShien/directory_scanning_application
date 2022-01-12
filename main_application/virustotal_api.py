@@ -1,5 +1,6 @@
+import import_func
 from vtapi3 import VirusTotalAPIError, VirusTotalAPIFiles
-import config.vt_api_key as vt_api_key 
+from config import vt_api_key
 import json  
 import requests
 
@@ -11,19 +12,23 @@ def test_api_key(apikey):
     if valid, it returns a virustotal connection instance.
     code refrence from Virustotal API  https://developers.virustotal.com/reference/file-info
     """
-    url = "https://www.virustotal.com/api/v3/files/7adf6a2d681b41c0e18a8affc3c765c7"
+    try:
+        url = "https://www.virustotal.com/api/v3/files/7adf6a2d681b41c0e18a8affc3c765c7"
 
-    headers = {
-        "Accept": "application/json",
-        "x-apikey": apikey
-    }
+        headers = {
+            "Accept": "application/json",
+            "x-apikey": apikey
+        }
 
-    response = requests.request("GET", url, headers=headers)
+        response = requests.request("GET", url, headers=headers)
 
-    if response.status_code == 200:
-        return True
-    else:
-        return False
+        if response.status_code == 200:
+            return True
+        else:
+            return False
+    except:
+
+        return "Invalid API KEY!"
 
 def create_instance():
     """
@@ -76,21 +81,11 @@ def get_information(vt, file_hash):
     else:
         if vt.get_last_http_error() == vt.HTTP_OK:
             result = json.loads(result)
-            
-            #type of the file 
-            f_type = result["data"]["attributes"]["type_description"]
-            #magic
-            f_magic = result["data"]["attributes"]["magic"]
-            #reputation
-            f_rep = result["data"]["attributes"]["reputation"] 
-            #link 
-            f_link = result["data"]["links"]["self"]
-            #sha-1
-            f_sha = result["data"]["attributes"]["sha1"]
+            print("Querying Virustotal for : " + file_hash)
             
             #an array that hold information about the engine that detected mallicious
-            engine_info= []
-            print("Querying Viruatotal for : " + file_hash)
+            all_info = [[0]]
+            engine_info = []
             for i in result["data"]["attributes"]["last_analysis_results"]:
                 ##print(i + "\t\t" + result["data"]["attributes"]["last_analysis_results"][i]["category"])
                 #if the result is mallicious
@@ -107,10 +102,25 @@ def get_information(vt, file_hash):
 
                     else: 
                         r = ""
-                    
-                    engine_info.append([engine, version, r, update])
 
-            return [[file_hash, f_sha ,f_type, f_magic, f_rep, f_link ],engine_info]
+                    #type of the file 
+                    f_type = result["data"]["attributes"]["type_description"]
+                    #magic           
+                    f_magic = result["data"]["attributes"]["magic"]
+
+                    #reputation
+                    f_rep = result["data"]["attributes"]["reputation"] 
+                    #link 
+                    f_link = result["data"]["links"]["self"]
+                    #sha-1
+                    f_sha = result["data"]["attributes"]["sha1"]
+                    
+                    all_info[0] = [file_hash, f_sha ,f_type, f_magic, f_rep, f_link ]                   
+                    engine_info.append([engine, version, r, update])
+                else:
+                    continue
+            all_info.append(engine_info)
+            return all_info
 
         else:
             print('HTTP Error [' + str(vt.get_last_http_error()) +']')

@@ -1,10 +1,12 @@
+import import_func
 import argparse
-from types import CellType
-import virustotal_api
+import main_application.virustotal_api as virustotal_api
 import config.vt_api_key as vt_api_key
 import os
-import query_nist
-import config.nist_server_configuration as nist_server_configuration
+from main_application import query_nist
+from config import nist_server_configuration
+
+
 
 def create_menu():
     """
@@ -23,7 +25,7 @@ def create_menu():
     out.add_argument('-oF', '--output_file' , help="Specify the report file name. Default: dir_report", action="store")
     out.add_argument('-oD', '--output_dir' , help="Specify the directory of the report. Default: current directory", action="store")
 
-    args = ap.parse_args(['-d', '/home/kali/Downloads'])
+    args = ap.parse_args(["-s", "127.0.0.1"])
 
     return args
 
@@ -72,6 +74,14 @@ def test_parameter(args):
         if os.path.exists(args.directory) == False:
             print("Error: Invalid Directory for scanning.")
             return None
+        #no permission to access i.e. root folder
+        if os.access(args.directory, os.R_OK) == False:
+            print("Error: Directory require root permission ")
+            return None
+        #no file in the directory / empty directory
+        if not os.listdir(args.directory):
+            print("Warning: Directory is empty. No file to scan.\nEnd of operation.")
+            return None
 
     #Check Directory for saving report output
     if args.output_dir:
@@ -79,6 +89,9 @@ def test_parameter(args):
         if os.path.exists(args.output_dir) == False:
             print("Error: Invalid Directory for saving the report.")
             return None
-
+       #no permission to access i.e. root folder
+        if os.access(args.output_dir, os.R_OK) == False:
+            print("Error: Directory require root permission ")
+            return None
 
     return True

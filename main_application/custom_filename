@@ -1,0 +1,407 @@
+File System Scanning Report 
+
+Scanned Date: 2022-01-10-18:19:33
+Scanned directory: /home/kali/Downloads
+
+
+Malicious file (full path):	/home/kali/Downloads/spc
+File hash (MD5):	df3cbba1cd097f7154478517a1f0ed7b
+File hash (SHA1):	fbf2eec453a97fd00798af3b02b137d366b7662f
+File type:	ELF
+File identifier (magic):	ELF 32-bit MSB executable, SPARC, version 1 (SYSV), statically linked, stripped
+Reputation:	0
+Details available at:	https://www.virustotal.com/api/v3/files/f42364ef39d752b5c6546df2ee4572a6fc644e0bda931ef7e1d4e644e6dc29b7
+
+VirusTotal Engine That Detected Malicious: 
+	Engine Name:	Lionic
+	Engine Version:	4.2
+	Result:	Trojan.Linux.Mirai.K!c
+	Engine Update:	2022-01-10
+
+	Engine Name:	Elastic
+	Engine Version:	4.0.32
+	Result:	Linux.Trojan.Gafgyt
+	Engine Update:	2021-12-23
+
+	Engine Name:	MicroWorld-eScan
+	Engine Version:	14.0.409.0
+	Result:	Trojan.Linux.Mirai.1
+	Engine Update:	2022-01-10
+
+	Engine Name:	FireEye
+	Engine Version:	32.44.1.0
+	Result:	Trojan.Linux.Mirai.1
+	Engine Update:	2022-01-10
+
+	Engine Name:	CAT-QuickHeal
+	Engine Version:	14.00
+	Result:	Elf.Trojan.A3965474
+	Engine Update:	2022-01-10
+
+	Engine Name:	ALYac
+	Engine Version:	1.1.3.1
+	Result:	Trojan.Linux.Mirai.1
+	Engine Update:	2022-01-10
+
+	Engine Name:	Sangfor
+	Engine Version:	2.9.0.0
+	Result:	Malware.ELF-Script.Save.41b44dcf
+	Engine Update:	2021-12-24
+
+	Engine Name:	BitDefenderTheta
+	Engine Version:	7.2.37796.0
+	Result:	Gen:NN.Mirai.34114
+	Engine Update:	2021-12-23
+
+	Engine Name:	Cyren
+	Engine Version:	6.5.1.2
+	Result:	E32/Mirai.G.gen!Camelot
+	Engine Update:	2022-01-10
+
+	Engine Name:	Symantec
+	Engine Version:	1.16.0.0
+	Result:	Trojan.Gen.NPE
+	Engine Update:	2022-01-10
+
+	Engine Name:	ESET-NOD32
+	Engine Version:	24598
+	Result:	a variant of Linux/Mirai.L
+	Engine Update:	2022-01-10
+
+	Engine Name:	TrendMicro-HouseCall
+	Engine Version:	10.0.0.1040
+	Result:	Backdoor.Linux.GAFGYT.SMMR2
+	Engine Update:	2022-01-10
+
+	Engine Name:	Avast
+	Engine Version:	21.1.5827.0
+	Result:	ELF:Mirai-AJM [Trj]
+	Engine Update:	2022-01-10
+
+	Engine Name:	ClamAV
+	Engine Version:	0.104.1.0
+	Result:	Unix.Dropper.Mirai-7136015-0
+	Engine Update:	2022-01-10
+
+	Engine Name:	Kaspersky
+	Engine Version:	21.0.1.45
+	Result:	HEUR:Backdoor.Linux.Mirai.b
+	Engine Update:	2022-01-10
+
+	Engine Name:	BitDefender
+	Engine Version:	7.2
+	Result:	Trojan.Linux.Mirai.1
+	Engine Update:	2022-01-10
+
+	Engine Name:	Tencent
+	Engine Version:	1.0.0.1
+	Result:	Backdoor.Linux.Mirai.waz
+	Engine Update:	2022-01-10
+
+	Engine Name:	Ad-Aware
+	Engine Version:	3.0.21.193
+	Result:	Trojan.Linux.Mirai.1
+	Engine Update:	2022-01-10
+
+	Engine Name:	Emsisoft
+	Engine Version:	2021.5.0.7597
+	Result:	Trojan.Linux.Mirai.1 (B)
+	Engine Update:	2022-01-10
+
+	Engine Name:	DrWeb
+	Engine Version:	7.0.52.8270
+	Result:	Linux.Mirai.632
+	Engine Update:	2022-01-10
+
+	Engine Name:	TrendMicro
+	Engine Version:	11.0.0.1006
+	Result:	Backdoor.Linux.GAFGYT.SMMR2
+	Engine Update:	2022-01-10
+
+	Engine Name:	McAfee-GW-Edition
+	Engine Version:	v2019.1.2+3728
+	Result:	GenericRXQK-WM!DF3CBBA1CD09
+	Engine Update:	2022-01-10
+
+	Engine Name:	Sophos
+	Engine Version:	1.4.1.0
+	Result:	Linux/DDoS-CI
+	Engine Update:	2022-01-10
+
+	Engine Name:	Avast-Mobile
+	Engine Version:	220110-04
+	Result:	ELF:Mirai-DN [Trj]
+	Engine Update:	2022-01-10
+
+	Engine Name:	Avira
+	Engine Version:	8.3.3.12
+	Result:	LINUX/Mirai.dvzep
+	Engine Update:	2022-01-10
+
+	Engine Name:	Gridinsoft
+	Engine Version:	1.0.68.170
+	Result:	Suspicious.XOR_Encoded.bot!yf
+	Engine Update:	2022-01-10
+
+	Engine Name:	Microsoft
+	Engine Version:	1.1.18800.4
+	Result:	Backdoor:Linux/Mirai.YA!MTB
+	Engine Update:	2022-01-10
+
+	Engine Name:	GData
+	Engine Version:	A:25.31991B:27.25822
+	Result:	Trojan.Linux.Mirai.1
+	Engine Update:	2022-01-10
+
+	Engine Name:	Cynet
+	Engine Version:	4.0.0.27
+	Result:	Malicious (score: 99)
+	Engine Update:	2022-01-10
+
+	Engine Name:	AhnLab-V3
+	Engine Version:	3.21.2.10258
+	Result:	Linux/Mirai.Gen13
+	Engine Update:	2022-01-10
+
+	Engine Name:	McAfee
+	Engine Version:	6.0.6.653
+	Result:	GenericRXQK-WM!DF3CBBA1CD09
+	Engine Update:	2022-01-10
+
+	Engine Name:	MAX
+	Engine Version:	2019.9.16.1
+	Result:	malware (ai score=81)
+	Engine Update:	2022-01-10
+
+	Engine Name:	Rising
+	Engine Version:	25.0.0.27
+	Result:	Backdoor.Mirai/Linux!1.DA91 (CLOUD)
+	Engine Update:	2022-01-10
+
+	Engine Name:	Ikarus
+	Engine Version:	0.1.5.2
+	Result:	Trojan.Linux.Gafgyt
+	Engine Update:	2022-01-10
+
+	Engine Name:	MaxSecure
+	Engine Version:	1.0.0.1
+	Result:	Trojan.Malware.121218.susgen
+	Engine Update:	2022-01-05
+
+	Engine Name:	Fortinet
+	Engine Version:	6.2.142.0
+	Result:	ELF/Mirai.H!tr
+	Engine Update:	2022-01-10
+
+	Engine Name:	AVG
+	Engine Version:	21.1.5827.0
+	Result:	ELF:Mirai-AJM [Trj]
+	Engine Update:	2022-01-10
+
+
+
+Malicious file (full path):	/home/kali/Downloads/bin.sh
+File hash (MD5):	59ce0baba11893f90527fc951ac69912
+File hash (SHA1):	5857a7dd621c4c3ebb0b5a3bec915d409f70d39f
+File type:	ELF
+File identifier (magic):	ELF 32-bit MSB executable, MIPS, MIPS-I version 1 (SYSV), statically linked, stripped
+Reputation:	-36
+Details available at:	https://www.virustotal.com/api/v3/files/4293c1d8574dc87c58360d6bac3daa182f64f7785c9d41da5e0741d2b1817fc7
+
+VirusTotal Engine That Detected Malicious: 
+	Engine Name:	Lionic
+	Engine Version:	4.2
+	Result:	Trojan.Linux.Mirai.K!c
+	Engine Update:	2022-01-10
+
+	Engine Name:	Elastic
+	Engine Version:	4.0.32
+	Result:	Linux.Packer.Patched.UPX
+	Engine Update:	2021-12-23
+
+	Engine Name:	MicroWorld-eScan
+	Engine Version:	14.0.409.0
+	Result:	Trojan.GenericKD.47694134
+	Engine Update:	2022-01-10
+
+	Engine Name:	FireEye
+	Engine Version:	32.44.1.0
+	Result:	Trojan.GenericKD.47694134
+	Engine Update:	2022-01-10
+
+	Engine Name:	McAfee
+	Engine Version:	6.0.6.653
+	Result:	RDN/Generic BackDoor
+	Engine Update:	2022-01-10
+
+	Engine Name:	Arcabit
+	Engine Version:	1.0.0.888
+	Result:	Trojan.Generic.D2D7C136
+	Engine Update:	2022-01-10
+
+	Engine Name:	VirIT
+	Engine Version:	9.5.108
+	Result:	Linux.Mirai.HGK
+	Engine Update:	2022-01-10
+
+	Engine Name:	Cyren
+	Engine Version:	6.5.1.2
+	Result:	E32/Trojan.OWNZ-8
+	Engine Update:	2022-01-10
+
+	Engine Name:	Symantec
+	Engine Version:	1.16.0.0
+	Result:	Trojan.Gen.NPE
+	Engine Update:	2022-01-10
+
+	Engine Name:	ESET-NOD32
+	Engine Version:	24598
+	Result:	Linux/Mozi.A
+	Engine Update:	2022-01-10
+
+	Engine Name:	Avast
+	Engine Version:	21.1.5827.0
+	Result:	Other:Malware-gen [Trj]
+	Engine Update:	2022-01-10
+
+	Engine Name:	ClamAV
+	Engine Version:	0.104.1.0
+	Result:	Unix.Trojan.Mozi-9840825-0
+	Engine Update:	2022-01-10
+
+	Engine Name:	Kaspersky
+	Engine Version:	21.0.1.45
+	Result:	HEUR:Backdoor.Linux.Mirai.b
+	Engine Update:	2022-01-10
+
+	Engine Name:	BitDefender
+	Engine Version:	7.2
+	Result:	Trojan.GenericKD.47694134
+	Engine Update:	2022-01-10
+
+	Engine Name:	NANO-Antivirus
+	Engine Version:	1.0.146.25520
+	Result:	Trojan.Mirai.hzftlg
+	Engine Update:	2022-01-10
+
+	Engine Name:	Tencent
+	Engine Version:	1.0.0.1
+	Result:	Backdoor.Linux.Mirai.wao
+	Engine Update:	2022-01-10
+
+	Engine Name:	Ad-Aware
+	Engine Version:	3.0.21.193
+	Result:	Trojan.GenericKD.47694134
+	Engine Update:	2022-01-10
+
+	Engine Name:	Emsisoft
+	Engine Version:	2021.5.0.7597
+	Result:	Trojan.GenericKD.47694134 (B)
+	Engine Update:	2022-01-10
+
+	Engine Name:	Comodo
+	Engine Version:	34251
+	Result:	Malware@#29jjoxweg20s0
+	Engine Update:	2022-01-10
+
+	Engine Name:	F-Secure
+	Engine Version:	12.0.86.52
+	Result:	Malware.LINUX/Mirai.dpaeh
+	Engine Update:	2022-01-10
+
+	Engine Name:	DrWeb
+	Engine Version:	7.0.52.8270
+	Result:	Linux.Siggen.4218
+	Engine Update:	2022-01-10
+
+	Engine Name:	Zillya
+	Engine Version:	2.0.0.4542
+	Result:	Trojan.Mirai.Linux.80045
+	Engine Update:	2022-01-09
+
+	Engine Name:	TrendMicro
+	Engine Version:	11.0.0.1006
+	Result:	Backdoor.Linux.MIRAI.USELVF221
+	Engine Update:	2022-01-10
+
+	Engine Name:	McAfee-GW-Edition
+	Engine Version:	v2019.1.2+3728
+	Result:	RDN/Generic BackDoor
+	Engine Update:	2022-01-10
+
+	Engine Name:	Sophos
+	Engine Version:	1.4.1.0
+	Result:	Linux/DDoS-CI
+	Engine Update:	2022-01-10
+
+	Engine Name:	Jiangmin
+	Engine Version:	16.0.100
+	Result:	Backdoor.Linux.fnqr
+	Engine Update:	2022-01-10
+
+	Engine Name:	Avira
+	Engine Version:	8.3.3.12
+	Result:	LINUX/Mirai.dpaeh
+	Engine Update:	2022-01-10
+
+	Engine Name:	Antiy-AVL
+	Engine Version:	3.0.0.1
+	Result:	Trojan[Backdoor]/Linux.Mirai
+	Engine Update:	2022-01-10
+
+	Engine Name:	Microsoft
+	Engine Version:	1.1.18800.4
+	Result:	Trojan:Linux/Dakkatoni.A!MTB
+	Engine Update:	2022-01-10
+
+	Engine Name:	GData
+	Engine Version:	A:25.31991B:27.25822
+	Result:	Trojan.GenericKD.47694134
+	Engine Update:	2022-01-10
+
+	Engine Name:	Cynet
+	Engine Version:	4.0.0.27
+	Result:	Malicious (score: 99)
+	Engine Update:	2022-01-10
+
+	Engine Name:	AhnLab-V3
+	Engine Version:	3.21.2.10258
+	Result:	Trojan/Linux.Mirai.307960
+	Engine Update:	2022-01-10
+
+	Engine Name:	ALYac
+	Engine Version:	1.1.3.1
+	Result:	Backdoor.Linux.Mirai
+	Engine Update:	2022-01-10
+
+	Engine Name:	MAX
+	Engine Version:	2019.9.16.1
+	Result:	malware (ai score=94)
+	Engine Update:	2022-01-10
+
+	Engine Name:	Rising
+	Engine Version:	25.0.0.27
+	Result:	Backdoor.Mirai/Linux!1.DA5C (CLOUD)
+	Engine Update:	2022-01-10
+
+	Engine Name:	Ikarus
+	Engine Version:	0.1.5.2
+	Result:	Trojan.Linux.Mirai
+	Engine Update:	2022-01-10
+
+	Engine Name:	MaxSecure
+	Engine Version:	1.0.0.1
+	Result:	Trojan.Malware.121218.susgen
+	Engine Update:	2022-01-05
+
+	Engine Name:	Fortinet
+	Engine Version:	6.2.142.0
+	Result:	Linux/Mirai.A!tr
+	Engine Update:	2022-01-10
+
+	Engine Name:	AVG
+	Engine Version:	21.1.5827.0
+	Result:	Other:Malware-gen [Trj]
+	Engine Update:	2022-01-10
+
+

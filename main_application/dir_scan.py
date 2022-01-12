@@ -1,10 +1,10 @@
 #/bin/python3
-from requests.api import get
-import menu
-from scan_filesystem import scan_file_system
-from query_nist import connect_server, close_connection, query_hashed_db, filter_dataset
-from virustotal_api import create_instance, vt_upload, get_information
-from reporting import create_file, append_to_report, close_file
+import import_func
+import main_application.menu as menu
+from main_application.scan_filesystem import scan_file_system
+from main_application.query_nist import connect_server, close_connection, query_hashed_db, filter_dataset
+from main_application.virustotal_api import create_instance, vt_upload, get_information
+from main_application.reporting import create_file, append_to_report, close_file
 
 #create menu, test parameter and configuration 
 instance = menu.create_menu()
@@ -41,25 +41,25 @@ if menu.test_parameter(instance):
     #create virustotal API connection instance
     vt_instance = create_instance()
 
+    if instance.output_file and instance.directory and instance.output_dir: #three optional arguments are presence              
+        file_instance = create_file(root_path_scanned = instance.directory, path_to_save=instance.output_dir, f_name= instance.output_file )
+
+    elif instance.output_dir and instance.directory: #directory scanned and directory to save
+        file_instance = create_file(root_path_scanned = instance.directory, path_to_save=instance.output_dir)
+
+    elif instance.directory and instance.output_file: #only directory scanned and file name to save are presence
+        file_instance = create_file(root_path_scanned = instance.directory, f_name= instance.output_file )
+        
+    elif instance.output_dir and instance.output_file: #directory to save and file name to save are presence
+        file_instance = create_file(path_to_save=instance.output_dir, f_name= instance.output_file )
+        
     #create file instance 
-    if instance.directory:  #only directory scanned is presence
+    elif instance.directory:  #only directory scanned is presence
         file_instance = create_file(root_path_scanned = instance.directory)
 
-        if instance.output_dir: #directory scanned and directory to save
-            file_instance = create_file(root_path_scanned = instance.directory, path_to_save=instance.output_dir)
-
-            if instance.output_file: #three optional arguments are presence              
-                file_instance = create_file(root_path_scanned = instance.directory, path_to_save=instance.output_dir, f_name= instance.output_file )
-        
-        elif instance.output_file: #only directory scanned and file name to save are presence
-            file_instance = create_file(root_path_scanned = instance.directory, f_name= instance.output_file )
-        
     elif instance.output_dir: #directory to save
         file_instance = create_file(path_to_save=instance.output_dir)
-        
-        if instance.output_file: #directory to save and file name to save are presence
-            file_instance = create_file(f_name= instance.output_file )
-    
+
     elif instance.output_file: #only file name to save are presence
         file_instance = create_file(f_name= instance.output_file )
     
@@ -83,6 +83,6 @@ if menu.test_parameter(instance):
             append_to_report(file_instance, i , m_file_info )
 
     close_file(file_instance)
-    
+
 else:
-    print("Error.")
+    print("Terminating application")

@@ -1,7 +1,6 @@
+import import_func
 import config.nist_server_configuration as nist_server_configuration
 import socket
-
-
 
 def connect_server():
     """
@@ -10,17 +9,21 @@ def connect_server():
     It returns a socket instance.
     """
     try:
+        #set timeout
+        socket.setdefaulttimeout(5)
+        
         #make socket instance 
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
         #conencting to NSRL server
         s.connect((nist_server_configuration.nsrl_server, nist_server_configuration.nsrl_port))
         #try ro query the database with a hash
         return s
+    except socket.timeout:
+        print(" Connection Timeout")
+        return None
     except:
-        return False
-        
- 
+        return None
+    
 def query_hashed_db(s, md5_hashes):
     """
     The function queries the NIST NSRL server, with a list of hash value as the input.
@@ -41,14 +44,17 @@ def query_hashed_db(s, md5_hashes):
         #construct query statement 
         query_statement = "query " + " ".join(md5_hashes) + "\r\n"
 
-        #execute query statement
-        s.sendall(query_statement.encode("UTF-8"))
-        #read response
-        r = f.readline()
-        if r[:2] != "OK":
-            raise RuntimeError("NSRL server query error.")
-        
-        return r
+        try:
+            #execute query statement
+            s.sendall(query_statement.encode("UTF-8"))
+            #read response
+            r = f.readline()
+            if r[:2] != "OK":
+                raise RuntimeError("NSRL server query error.")
+            
+            return r
+        except:
+            print("Error: check input for hashes.")
     except:
         print("Error querying database. ")
         
